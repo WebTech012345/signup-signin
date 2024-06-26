@@ -7,7 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             event.preventDefault();
             const targetForm = this.getAttribute('data-target');
-            toggleForm(targetForm);
+            if (targetForm) {
+                toggleForm(targetForm);
+            } else {
+                togglePassword(this.previousElementSibling.id);
+            }
         });
     });
 
