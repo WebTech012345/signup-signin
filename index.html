@@ -2,74 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neomorphic Sign-in Form</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Sign In / Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="box" id="signin-form">
+        <div id="signin-form" class="box">
             <form onsubmit="return validateSignIn()">
-                <label for="signin-email-phone">Email or Phone</label><br>
-                <input type="text" id="signin-email-phone" placeholder="Enter Email or Phone" class="input-box"><br><br>
-                <label for="signin-password">Password</label><br>
-                <div class="password-container">
-                    <input type="password" id="signin-password" placeholder="Enter Password" class="input-box">
-                    <button type="button" class="toggle-btn" onclick="togglePassword('signin-password')">👁️</button>
-                </div>
-                <div id="signin-error" class="error-message"></div>
-                <div class="remember-forget">
+                <h2>Sign In</h2>
+                <label for="signin-email-phone">Email or Phone</label>
+                <input type="text" id="signin-email-phone" placeholder="Enter Email or Phone">
+                <span id="signin-error" class="error"></span>
+                <label for="signin-password">Password</label>
+                <input type="password" id="signin-password" placeholder="Enter Password">
+                <button type="button" class="toggle-btn" onclick="togglePassword('signin-password')">👁️</button>
+                <div class="flex-container">
                     <label class="checkbox-label">
                         <input type="checkbox">
-                        <span class="checkbox-custom"></span>
-                        <span class="label-text">Remember me</span>
+                        Remember me
                     </label>
-                    <span class="fg">
-                        <a href="#">Forget password?</a>
-                    </span>
+                    <span class="fg"><a href="#">Forget password?</a></span>
                 </div>
                 <button type="submit" class="btn">Sign In</button>
+                <span class="option">or sign in with</span>
+                <div class="social">
+                    <div class="box-radius"><img src="images/fb.png" alt="Facebook"></div>
+                    <div class="box-radius"><img src="images/google.png" alt="Google"></div>
+                    <div class="box-radius"><img src="images/linkedin.png" alt="LinkedIn"></div>
+                    <div class="box-radius"><img src="images/twitter.png" alt="Twitter"></div>
+                </div>
+                <span class="option">Don't have an account? <a href="#" class="toggle-btn" data-target="signup">Sign up</a></span>
             </form>
-            <span class="option">or sign in with</span>
-            <div class="social">
-                <div class="box-radius"><img src="images/fb.png" alt=""></div>
-                <div class="box-radius"><img src="images/google.png" alt=""></div>
-                <div class="box-radius"><img src="images/linkedin.png" alt=""></div>
-                <div class="box-radius"><img src="images/twitter.png" alt=""></div>
-            </div>
-            <span class="option">Don't have an account? <a href="#" class="toggle-btn" data-target="signup">Sign up</a></span>
         </div>
-
-        <div class="box is-hidden" id="signup-form">
+        <div id="signup-form" class="box is-hidden">
             <form onsubmit="return validateSignUp()">
-                <label for="signup-email">Email</label><br>
-                <input type="email" id="signup-email" placeholder="Enter Email" class="input-box"><br><br>
-                <label for="signup-phone">Phone</label><br>
-                <input type="text" id="signup-phone" placeholder="Enter Phone Number" class="input-box"><br><br>
-                <label for="signup-password">Password</label><br>
-                <div class="password-container">
-                    <input type="password" id="signup-password" placeholder="Enter Password" class="input-box">
-                    <button type="button" class="toggle-btn" onclick="togglePassword('signup-password')">👁️</button>
-                </div>
-                <label for="signup-confirm-password">Confirm Password</label><br>
-                <div class="password-container">
-                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" class="input-box">
-                    <button type="button" class="toggle-btn" onclick="togglePassword('signup-confirm-password')">👁️</button>
-                </div>
-                <div id="password-match-error" class="error-message"></div>
+                <h2>Sign Up</h2>
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter Email">
+                <label for="signup-phone">Phone</label>
+                <input type="tel" id="signup-phone" placeholder="Enter Phone">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Enter Password">
+                <button type="button" class="toggle-btn" onclick="togglePassword('signup-password')">👁️</button>
+                <label for="signup-confirm-password">Confirm Password</label>
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password">
+                <button type="button" class="toggle-btn" onclick="togglePassword('signup-confirm-password')">👁️</button>
+                <span id="password-match-error" class="error"></span>
                 <button type="submit" class="btn">Sign Up</button>
+                <span class="option">or sign up with</span>
+                <div class="social">
+                    <div class="box-radius"><img src="images/fb.png" alt="Facebook"></div>
+                    <div class="box-radius"><img src="images/google.png" alt="Google"></div>
+                    <div class="box-radius"><img src="images/linkedin.png" alt="LinkedIn"></div>
+                    <div class="box-radius"><img src="images/twitter.png" alt="Twitter"></div>
+                </div>
+                <span class="option">Already have an account? <a href="#" class="toggle-btn" data-target="signin">Sign in</a></span>
             </form>
-            <span class="option">or sign up with</span>
-            <div class="social">
-                <div class="box-radius"><img src="images/fb.png" alt=""></div>
-                <div class="box-radius"><img src="images/google.png" alt=""></div>
-                <div class="box-radius"><img src="images/linkedin.png" alt=""></div>
-                <div class="box-radius"><img src="images/twitter.png" alt=""></div>
-            </div>
-            <span class="option">Already have an account? <a href="#" class="toggle-btn" data-target="signin">Sign in</a></span>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
