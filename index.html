@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neomorphic Sign-in Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="signin-form">
+            <form onsubmit="return validateSignIn()">
+                <label for="signin-email-phone">Email or Phone</label><br>
+                <input type="text" id="signin-email-phone" placeholder="Enter Email or Phone" class="input-box"><br><br>
+                <label for="signin-password">Password</label><br>
+                <div class="password-container">
+                    <input type="password" id="signin-password" placeholder="Enter Password" class="input-box">
+                    <button type="button" class="toggle-btn" onclick="togglePassword('signin-password')">👁️</button>
+                </div>
+                <div id="signin-error" class="error-message"></div>
+                <div class="remember-forget">
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span class="checkbox-custom"></span>
+                        <span class="label-text">Remember me</span>
+                    </label>
+                    <span class="fg">
+                        <a href="#">Forget password?</a>
+                    </span>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            <span class="option">or sign in with</span>
+            <div class="social">
+                <div class="box-radius"><img src="images/fb.png" alt=""></div>
+                <div class="box-radius"><img src="images/google.png" alt=""></div>
+                <div class="box-radius"><img src="images/linkedin.png" alt=""></div>
+                <div class="box-radius"><img src="images/twitter.png" alt=""></div>
+            </div>
+            <span class="option">Don't have an account? <a href="#" class="toggle-btn" data-target="signup">Sign up</a></span>
+        </div>
+
+        <div class="box is-hidden" id="signup-form">
+            <form onsubmit="return validateSignUp()">
+                <label for="signup-email">Email</label><br>
+                <input type="email" id="signup-email" placeholder="Enter Email" class="input-box"><br><br>
+                <label for="signup-phone">Phone</label><br>
+                <input type="text" id="signup-phone" placeholder="Enter Phone Number" class="input-box"><br><br>
+                <label for="signup-password">Password</label><br>
+                <div class="password-container">
+                    <input type="password" id="signup-password" placeholder="Enter Password" class="input-box">
+                    <button type="button" class="toggle-btn" onclick="togglePassword('signup-password')">👁️</button>
+                </div>
+                <label for="signup-confirm-password">Confirm Password</label><br>
+                <div class="password-container">
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" class="input-box">
+                    <button type="button" class="toggle-btn" onclick="togglePassword('signup-confirm-password')">👁️</button>
+                </div>
+                <div id="password-match-error" class="error-message"></div>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <span class="option">or sign up with</span>
+            <div class="social">
+                <div class="box-radius"><img src="images/fb.png" alt=""></div>
+                <div class="box-radius"><img src="images/google.png" alt=""></div>
+                <div class="box-radius"><img src="images/linkedin.png" alt=""></div>
+                <div class="box-radius"><img src="images/twitter.png" alt=""></div>
+            </div>
+            <span class="option">Already have an account? <a href="#" class="toggle-btn" data-target="signin">Sign in</a></span>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
